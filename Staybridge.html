@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal: Staybridge Suites Port Elgin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- 
+    Chosen Palette: Professional & Inviting (Slate, Teal, Amber accents)
+    Application Structure Plan: A multi-slide presentation within a single HTML file. Each slide is a full-height, centered section. Navigation is handled via simple JavaScript buttons (Previous/Next) to move sequentially through the slides. This linear flow is ideal for a persuasive proposal, guiding the audience through problem, solution, benefits, and call to action.
+    Visualization & Content Choices: Content is presented in clear, concise bullet points and bold headings. Icons (Unicode characters) are used to visually represent concepts like growth, time-saving, and trust, enhancing readability and engagement without relying on external image assets (except for optional logos). The structure avoids complex charts or interactive data visualizations, as the primary goal is to deliver a compelling narrative proposal.
+    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. 
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; /* Prevent scrolling during slide transitions */
+        }
+        .slide {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            position: relative; /* Bring active slide into document flow */
+        }
+        .nav-button {
+            position: fixed;
+            bottom: 2rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #0d9488; /* Teal-600 */
+            color: white;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        .nav-button:hover {
+            background-color: #0f766e; /* Teal-700 */
+        }
+        #prevBtn {
+            left: 2rem;
+        }
+        #nextBtn {
+            right: 2rem;
+        }
+        .logo-placeholder {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0d9488; /* Teal-600 */
+            margin-bottom: 1rem;
+        }
+        .logo-img {
+            max-height: 80px; /* Adjust as needed */
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div id="presentation-container" class="relative w-full h-screen">
+
+        <!-- Slide 1: Cover Page -->
+        <div id="slide-1" class="slide active bg-gradient-to-br from-slate-100 to-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col items-center mb-8">
+                    <!-- El Capricho Digital Logo -->
+                    <img src="https://content-fetcher.web.app/uploaded:Foto%20perfil%20Facebook%20inmobiliaria%20minimalista%20en%20color%20amarillo%20y%20verde.png-5ba285ef-1762-4b5a-aaa3-224309746737" alt="El Capricho Digital Logo" class="logo-img">
+                    <p class="text-xl text-slate-600 my-4">Presents to</p>
+                    <!-- Staybridge Suites Logo -->
+                    <img src="https://placehold.co/200x80/d1d5db/000000?text=STAYBRIDGE+SUITES" alt="Staybridge Suites Logo" class="logo-img">
+                </div>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight">Strategic Proposal:</h1>
+                <h2 class="text-4xl md:text-5xl font-bold text-teal-600 mt-4">Boosting Staybridge Suites Port Elgin</h2>
+                <p class="mt-8 text-xl md:text-2xl text-slate-700">Increasing Bookings and Visibility with Modern Digital Marketing</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: The Current Challenge -->
+        <div id="slide-2" class="slide bg-white">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-slate-900 mb-12">The Current Challenge: Untapped Opportunities</h2>
+                <div class="grid md:grid-cols-2 gap-10 text-left">
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl text-amber-500">📉</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Underutilized Social Media</h3>
+                            <p class="text-slate-700">Facebook with sporadic posts, Instagram with very few followers and low activity. Thousands of potential guests are not discovering Staybridge's true charm.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl text-amber-500">🚫</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Missed Booking Opportunities</h3>
+                            <p class="text-slate-700">Customers seek visual and active experiences. If they don't find them on your social media, they turn to competitors.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl text-amber-500">⭐</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Neglected Online Reputation</h3>
+                            <p class="text-slate-700">Lack of review management on Google My Business and other platforms is a barrier to trust and booking decisions.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl text-amber-500">🗓️</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Low Occupancy Days</h3>
+                            <p class="text-slate-700">Without a digital strategy to drive demand, filling rooms during specific periods remains a challenge.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Our Solution: Accelerated Growth -->
+        <div id="slide-3" class="slide bg-slate-100">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-slate-900 mb-12">Our Solution: "Accelerated Growth" Package</h2>
+                <p class="text-xl text-slate-700 mb-8">Designed for hotels like Staybridge, this package is the key to a dynamic digital presence that attracts guests and maximizes occupancy.</p>
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl text-teal-600">🎥</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Impactful Visual Content (Videos/Reels)</h3>
+                            <p class="text-slate-700">We will showcase the Staybridge experience like never before, attracting more bookings.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl text-teal-600">📱</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Active Social Media Management (Instagram & Facebook)</h3>
+                            <p class="text-slate-700">We will keep your profiles vibrant and professional with 5 posts per week.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl text-teal-600">🤖</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Smart Automation</h3>
+                            <p class="text-slate-700">No booking inquiry will go unanswered, even outside business hours.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl text-teal-600">📈</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Online Reputation Management</h3>
+                            <p class="text-slate-700">We will implement a system to encourage and manage reviews, enhancing your rating and trust.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 col-span-2 justify-center">
+                        <span class="text-5xl text-teal-600">📊</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Analysis and Optimization</h3>
+                            <p class="text-slate-700">Clear monthly reports for you to see growth in visibility and inquiries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: The Power of Video (Deep Dive) -->
+        <div id="slide-4" class="slide bg-white">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-slate-900 mb-12">The Power of Video: Connecting with Future Guests</h2>
+                <p class="text-xl text-slate-700 mb-8">Videos and Reels are the most effective format to showcase the unique Staybridge Suites experience. We will create 2 short videos per month, focused on:</p>
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <ul class="list-none space-y-4 text-lg text-slate-700">
+                        <li class="flex items-center"><span class="text-2xl mr-3">✨</span> Tours of suites and common areas.</li>
+                        <li class="flex items-center"><span class="text-2xl mr-3">🍳</span> The delicious complimentary breakfast experience.</li>
+                        <li class="flex items-center"><span class="text-2xl mr-3">🐾</span> Highlighting being Pet-Friendly and its facilities.</li>
+                    </ul>
+                    <ul class="list-none space-y-4 text-lg text-slate-700">
+                        <li class="flex items-center"><span class="text-2xl mr-3">🏊</span> The pool area and fitness center.</li>
+                        <li class="flex items-center"><span class="text-2xl mr-3">🏞️</span> The beauty of Lake Huron and nearby attractions.</li>
+                        <li class="flex items-center"><span class="text-2xl mr-3">🎉</span> Special promotions to fill low occupancy days.</li>
+                    </ul>
+                </div>
+                <p class="mt-10 text-2xl font-bold text-teal-600">We will make travelers FEEL the Staybridge experience before they book!</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: Tangible Benefits -->
+        <div id="slide-5" class="slide bg-slate-100">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-slate-900 mb-12">Tangible Results for Staybridge Port Elgin</h2>
+                <div class="grid md:grid-cols-2 gap-10 text-left">
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl text-green-600">⬆️</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Increased Occupancy</h3>
+                            <p class="text-slate-700">Especially on low occupancy days and seasons, attracting ideal guests.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl text-green-600">🌟</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Greater Visibility and Recognition</h3>
+                            <p class="text-slate-700">Staybridge Port Elgin will be the top choice in travelers' minds in the area.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl text-green-600">✅</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Improved Online Reputation</h3>
+                            <p class="text-slate-700">More and better reviews on Google and booking platforms, building greater trust.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl text-green-600">⏰</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Time and Resource Savings</h3>
+                            <p class="text-slate-700">We will free up hotel staff from digital management, allowing them to focus on guest experience.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 col-span-2 justify-center">
+                        <span class="text-5xl text-green-600">💎</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Competitive Differentiation</h3>
+                            <p class="text-slate-700">Your digital presence will stand out from other hotels in Port Elgin and Toronto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Our Trust Guarantee -->
+        <div id="slide-6" class="slide bg-teal-50">
+            <div class="max-w-3xl mx-auto bg-white p-10 rounded-xl shadow-lg border border-teal-200">
+                <div class="text-5xl mb-4">🛡️</div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Our Trust Guarantee</h2>
+                <p class="text-xl text-slate-700">We are so confident in our impact that if, within the first **60 days**, you do not observe a **15% increase in qualified inquiries** (direct messages, WhatsApp, etc.) originating from the social media platforms we manage, **we will work the following month for you at no additional cost** until that goal is achieved.</p>
+                <p class="mt-4 text-lg font-semibold text-teal-700">Your investment is protected. Our commitment is to your results.</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: The Investment and Exclusive Bonuses -->
+        <div id="slide-7" class="slide bg-slate-100">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-slate-900 mb-12">The Investment and Exclusive Bonuses for Staybridge</h2>
+                <div class="grid md:grid-cols-2 gap-10 text-left">
+                    <div class="flex flex-col items-center justify-center bg-white p-8 rounded-lg shadow-md border border-slate-200">
+                        <h3 class="text-2xl font-bold mb-4">"Accelerated Growth" Package</h3>
+                        <div class="text-5xl font-extrabold my-4 text-teal-600">$450 <span class="text-2xl font-bold text-slate-500">CAD/month</span></div>
+                        <p class="text-slate-600">A strategic investment for consistent growth.</p>
+                    </div>
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Exclusive Bonuses for Staybridge:</h3>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-3xl text-amber-500">🎁</span>
+                            <div>
+                                <h4 class="text-xl font-bold">Express Hotel Competitor Micro-Audit</h4>
+                                <p class="text-slate-700">Analysis of 2-3 competing hotels in Port Elgin/Toronto to identify opportunities.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-3xl text-amber-500">💬</span>
+                            <div>
+                                <h4 class="text-xl font-bold">Quick Response Kit for Front Desk/Reservations</h4>
+                                <p class="text-slate-700">Templates for DMs/WhatsApp with the hotel's frequently asked questions.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-3xl text-amber-500">🎓</span>
+                            <div>
+                                <h4 class="text-xl font-bold">Quick Training Session for Front Desk Staff</h4>
+                                <p class="text-slate-700">1 hour on how to encourage positive reviews and handle basic social media interactions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Next Steps and Contact -->
+        <div id="slide-8" class="slide bg-slate-800 text-white">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-4">Next Steps: Let's Talk Growth!</h2>
+                <p class="text-xl text-slate-300 mb-8">We are ready to help Staybridge Suites Port Elgin reach its full digital potential.</p>
+                <div class="bg-white text-slate-800 p-10 rounded-lg shadow-2xl max-w-2xl mx-auto">
+                    <p class="text-2xl font-bold text-teal-600 mb-6">Schedule a 30-Minute Meeting</p>
+                    <p class="text-lg mb-6">I would love to present this strategy in detail and answer all your questions. We can discuss how this investment will translate into more bookings for the hotel.</p>
+                    <a href="[YOUR_HUBSPOT_LINK]" target="_blank" class="inline-block bg-teal-600 text-white font-bold text-lg px-8 py-4 rounded-lg shadow-lg hover:bg-teal-700 transition-colors duration-300">Schedule Meeting Now</a>
+                    <div class="mt-8 text-slate-700">
+                        <p class="text-lg font-semibold">Contact:</p>
+                        <p><strong>Franco Rivera</strong></p>
+                        <p>El Capricho Digital</p>
+                        <p>WhatsApp: [Your WhatsApp Number]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button id="prevBtn" class="nav-button hidden">← Previous</button>
+    <button id="nextBtn" class="nav-button">Next →</button>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            // Update button visibility
+            prevBtn.classList.toggle('hidden', index === 0);
+            nextBtn.classList.toggle('hidden', index === slides.length - 1);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        });
+
+        // Initial slide display
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
